@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  web:
+    build:
+      context: ./services/web
+      dockerfile: Dockerfile_dev
+    volumes:
+      - "./services/web/app/src:/app/src"
+      - "./services/web/app/public:/app/public"
+      - "./services/web/app/tsconfig.json:/app/tsconfig.json"
+      - "./services/web/app/babel.config.js:/app/babel.config.js"
+      - "./services/web/app/quasar.conf.js:/app/quasar.conf.js"
+      - "./services/web/app/quasar.extensions.json:/app/quasar.extensions.json"
+      - "./services/web/app/.eslintrc.js:/app/.eslintrc.js"
+      - "./services/web/app/.prettierrc:/app/.prettierrc"
+
+  api:
+    build:
+      context: ./services/api
+      dockerfile: Dockerfile_dev
+    volumes:
+      - "./services/api/src:/app/src"
+      - "./services/api/.eslintrc:/app/.eslintrc"
+    environment:
+      LOG_LEVEL: debug
