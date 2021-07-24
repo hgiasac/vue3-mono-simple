@@ -30,23 +30,14 @@ services:
       ## enable debugging mode. It is recommended to disable this in production
       HASURA_GRAPHQL_DEV_MODE: "true"
 
-  api:
-    build: ./services/api
-    ports:
-      - "9000:9000"
-    restart: always
-    depends_on:
-      - postgres
-    environment:
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:5432/${POSTGRES_DB}
-
   web:
     build: ./services/web
     ports:
       - "3000:3000"
     restart: always
     environment:
-      API_HOST: ${API_HOST}
+      DATA_URL: ${DATA_URL}
+      DATA_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
 
 volumes:
   db_data:

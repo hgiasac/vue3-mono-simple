@@ -7,5 +7,9 @@ function assertEnv(value: string | undefined, key: string): string {
 }
 
 export const Config = {
-  apiHost: assertEnv(process.env.API_HOST, "API_HOST"),
+  dataURL: assertEnv(process.env.DATA_URL, "DATA_URL"),
+  adminSecret: assertEnv(process.env.DATA_ADMIN_SECRET, "DATA_ADMIN_SECRET"),
+  hasuraClientName: process.env.HASURA_CLIENT_NAME || "web",
+  version: process.env.VERSION || "1.0.0",
+  debug: process.env.NODE_ENV !== "production",
 };

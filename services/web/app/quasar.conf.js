@@ -28,7 +28,7 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli/boot-files
-    boot: ["i18n", "axios"],
+    boot: ["i18n", "graphql"],
 
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ["app.scss"],
@@ -64,9 +64,12 @@ module.exports = configure(function (ctx) {
       // gzip: true,
       // analyze: true,
 
-      env: process.env.API_HOST
+      env: process.env.DATA_URL
         ? {
-            API_HOST: process.env.API_HOST,
+            DATA_URL: process.env.DATA_URL,
+            DATA_ADMIN_SECRET: process.env.DATA_ADMIN_SECRET,
+            HASURA_CLIENT_NAME: process.env.HASURA_CLIENT_NAME,
+            VERSION: process.env.VERSION,
           }
         : require("dotenv").config().parsed,
       // Options below are automatically set depending on the env, set them if you want to override

@@ -1,0 +1,7 @@
+
+
+query GetExamples($where: example_bool_exp!) {
+  example(where: $where) {
+    id
+  }
+}

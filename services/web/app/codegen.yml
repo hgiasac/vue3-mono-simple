@@ -1,0 +1,17 @@
+overwrite: true
+generates:
+  ./src/api/graphql/generated/controller-types.ts:
+    schema: 
+    - http://localhost:8080/v1/graphql:
+        headers:
+          x-hasura-admin-secret: hasura
+          x-hasura-role: admin
+    documents: "src/api/graphql/schema/**/*.graphql"
+    plugins:
+    - typescript
+    - typescript-operations
+    - typescript-vue-urql
+    config:
+      enumsAsTypes: true
+      immutableTypes: true
+      urqlImportFrom: "@urql/vue"

@@ -90,4 +90,5 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     "vue/require-default-prop": "off",
   },
+  ignorePatterns: ["src/api/graphql/generated/*.ts"],
 };

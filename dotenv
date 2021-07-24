@@ -14,5 +14,5 @@ COOKIE_KEY=inputcookiesecrethere
 # base64 encoded random string
 SESSION_KEY=inputsessionsecrethere
 
-API_HOST=http://localhost:9000
+DATA_URL=http://localhost:8080/v1/graphql
 GCP_PROJECT=
