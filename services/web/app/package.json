@@ -27,7 +27,7 @@
     "firebase:deploy:dev": "firebase deploy --only hosting"
   },
   "dependencies": {
-    "@hgiasac/quasar-wrapper": "^0.0.3",
+    "@hgiasac/quasar-wrapper": "^0.0.11",
     "@quasar/extras": "^1.10.9",
     "@urql/exchange-graphcache": "^4.2.1",
     "@urql/vue": "^0.4.2",

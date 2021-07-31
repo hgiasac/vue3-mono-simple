@@ -9,6 +9,7 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { configure } = require("quasar/wrappers");
+const getEnvs = require("./env.config");
 
 module.exports = configure(function (ctx) {
   return {
@@ -64,14 +65,9 @@ module.exports = configure(function (ctx) {
       // gzip: true,
       // analyze: true,
 
-      env: process.env.DATA_URL
-        ? {
-            DATA_URL: process.env.DATA_URL,
-            DATA_ADMIN_SECRET: process.env.DATA_ADMIN_SECRET,
-            HASURA_CLIENT_NAME: process.env.HASURA_CLIENT_NAME,
-            VERSION: process.env.VERSION,
-          }
-        : require("dotenv").config().parsed,
+      // edit env.config.js for environment variables
+      env: getEnvs(),
+
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,
 
