@@ -9,6 +9,7 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { configure } = require("quasar/wrappers");
+const getEnvs = require("./env.config");
 
 module.exports = configure(function (ctx) {
   return {
@@ -64,11 +65,8 @@ module.exports = configure(function (ctx) {
       // gzip: true,
       // analyze: true,
 
-      env: process.env.API_HOST
-        ? {
-            API_HOST: process.env.API_HOST,
-          }
-        : require("dotenv").config().parsed,
+      // edit env.config.js for environment variables
+      env: getEnvs(),
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,
 
