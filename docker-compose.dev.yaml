@@ -9,6 +9,7 @@ services:
       - "./services/web/app/public:/app/public"
       - "./services/web/app/tsconfig.json:/app/tsconfig.json"
       - "./services/web/app/babel.config.js:/app/babel.config.js"
+      - "./services/web/app/env.config.js:/app/env.config.js"
       - "./services/web/app/quasar.conf.js:/app/quasar.conf.js"
       - "./services/web/app/quasar.extensions.json:/app/quasar.extensions.json"
       - "./services/web/app/.eslintrc.js:/app/.eslintrc.js"
